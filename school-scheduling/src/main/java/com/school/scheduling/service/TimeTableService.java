@@ -54,6 +54,10 @@ public class TimeTableService {
         subjects.add(new Subject("地理", "GEO", Subject.SubjectType.SECONDARY, 3));
         subjects.add(new Subject("化学", "CHE", Subject.SubjectType.SECONDARY, 3));
         subjects.add(new Subject("生物", "BIO", Subject.SubjectType.SECONDARY, 3));
+        // 其他课程类型
+        subjects.add(new Subject("自习课", "STUDY", Subject.SubjectType.REQUIRED, 2));
+        subjects.add(new Subject("体育理论", "PE_THEORY", Subject.SubjectType.REQUIRED, 1));
+        subjects.add(new Subject("体育体能", "PE_PHYSICAL", Subject.SubjectType.REQUIRED, 2));
         return subjects;
     }
 

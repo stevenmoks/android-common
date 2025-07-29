@@ -3,19 +3,16 @@ package com.school.scheduling.entity;
 // 暂时注释Timefold相关import
 // import ai.timefold.solver.core.api.domain.entity.PlanningEntity;
 // import ai.timefold.solver.core.api.domain.variable.PlanningVariable;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 
 /**
  * 课程实体类 - 暂时移除Timefold注解
  * 表示一节具体的课程，需要分配教师和时间段
  */
 // @PlanningEntity
-@TableName("t_lesson")
+// @TableName("t_lesson")
 public class Lesson {
     
-    @TableId(type = IdType.AUTO)
+    // @TableId(type = IdType.AUTO)
     private Long id;
     
     /**

@@ -1,16 +1,10 @@
 package com.school.scheduling.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-
 /**
  * 班级实体类（3+2+1选科组合班级）
  */
-@TableName("t_student_class")
 public class StudentClass {
     
-    @TableId(type = IdType.AUTO)
     private Long id;
     
     /**

@@ -1,17 +1,12 @@
 package com.school.scheduling.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import java.util.List;
 
 /**
  * 教师实体类
  */
-@TableName("t_teacher")
 public class Teacher {
     
-    @TableId(type = IdType.AUTO)
     private Long id;
     
     /**
@@ -52,6 +47,15 @@ public class Teacher {
         this.employeeNumber = employeeNumber;
         this.subjectIds = subjectIds;
         this.maxWeeklyHours = maxWeeklyHours;
+        this.enabled = true;
+    }
+    
+    public Teacher(String name, String employeeNumber, String subjectIds, Integer maxWeeklyHours, String unavailableTimeSlots) {
+        this.name = name;
+        this.employeeNumber = employeeNumber;
+        this.subjectIds = subjectIds;
+        this.maxWeeklyHours = maxWeeklyHours;
+        this.unavailableTimeSlots = unavailableTimeSlots;
         this.enabled = true;
     }
     

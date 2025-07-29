@@ -1,7 +1,6 @@
 package com.school.scheduling.config;
 
 import com.school.scheduling.entity.*;
-import com.school.scheduling.mapper.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -17,18 +16,6 @@ import java.util.List;
  */
 @Component
 public class DataInitializer implements ApplicationRunner {
-
-    @Autowired
-    private SubjectMapper subjectMapper;
-
-    @Autowired
-    private TeacherMapper teacherMapper;
-
-    @Autowired
-    private StudentClassMapper studentClassMapper;
-
-    @Autowired
-    private TimeSlotMapper timeSlotMapper;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -66,9 +53,9 @@ public class DataInitializer implements ApplicationRunner {
         );
 
         // 批量插入
-        requiredSubjects.forEach(subjectMapper::insert);
-        primarySubjects.forEach(subjectMapper::insert);
-        secondarySubjects.forEach(subjectMapper::insert);
+        // requiredSubjects.forEach(subjectMapper::insert);
+        // primarySubjects.forEach(subjectMapper::insert);
+        // secondarySubjects.forEach(subjectMapper::insert);
     }
 
     /**
@@ -96,14 +83,14 @@ public class DataInitializer implements ApplicationRunner {
             for (int i = 0; i < morningSlots.size(); i++) {
                 LocalTime[] slot = morningSlots.get(i);
                 TimeSlot timeSlot = new TimeSlot(day, slot[0], slot[1], "第" + (i + 1) + "节");
-                timeSlotMapper.insert(timeSlot);
+                // timeSlotMapper.insert(timeSlot);
             }
 
             // 下午时间段
             for (int i = 0; i < afternoonSlots.size(); i++) {
                 LocalTime[] slot = afternoonSlots.get(i);
                 TimeSlot timeSlot = new TimeSlot(day, slot[0], slot[1], "第" + (i + 5) + "节");
-                timeSlotMapper.insert(timeSlot);
+                // timeSlotMapper.insert(timeSlot);
             }
         }
     }
@@ -146,7 +133,7 @@ public class DataInitializer implements ApplicationRunner {
                 new Teacher("韩老师", "T014", "[9]", 12)
         );
 
-        teachers.forEach(teacherMapper::insert);
+        // teachers.forEach(teacherMapper::insert);
     }
 
     /**
@@ -183,6 +170,6 @@ public class DataInitializer implements ApplicationRunner {
                 new StudentClass("高二12班", "高二", 43, 5L, 9L)
         );
 
-        classes.forEach(studentClassMapper::insert);
+        // classes.forEach(studentClassMapper::insert);
     }
 }

@@ -1,9 +1,5 @@
 package com.school.scheduling.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-
 /**
  * 学科实体类
  * 3+2+1分科模式：
@@ -11,10 +7,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
  * - 2门主选：物理/历史 二选一
  * - 1门副选：政治、地理、化学、生物 四选一
  */
-@TableName("t_subject")
 public class Subject {
     
-    @TableId(type = IdType.AUTO)
     private Long id;
     
     /**

@@ -1,18 +1,13 @@
 package com.school.scheduling.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 
 /**
  * 时间段实体类
  */
-@TableName("t_time_slot")
 public class TimeSlot {
     
-    @TableId(type = IdType.AUTO)
     private Long id;
     
     /**
