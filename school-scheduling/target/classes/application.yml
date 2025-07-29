@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: school-scheduling
+
+# 应用信息
+info:
+  app:
+    name: 高中3+2+1分科排课系统
+    description: 基于Timefold Solver的智能排课系统
+    version: 1.0.0
