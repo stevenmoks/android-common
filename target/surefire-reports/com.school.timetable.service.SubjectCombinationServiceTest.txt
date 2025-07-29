@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: com.school.timetable.service.SubjectCombinationServiceTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in com.school.timetable.service.SubjectCombinationServiceTest
+com.school.timetable.service.SubjectCombinationServiceTest.testGetAllValidCombinations()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.school.timetable.service.SubjectCombinationService.getAllValidCombinations()" because "this.subjectCombinationService" is null
+	at com.school.timetable.service.SubjectCombinationServiceTest.testGetAllValidCombinations(SubjectCombinationServiceTest.java:22)
+
+com.school.timetable.service.SubjectCombinationServiceTest.testValidCombination()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.school.timetable.service.SubjectCombinationService.isValidCombination(java.util.List)" because "this.subjectCombinationService" is null
+	at com.school.timetable.service.SubjectCombinationServiceTest.testValidCombination(SubjectCombinationServiceTest.java:40)
+
+com.school.timetable.service.SubjectCombinationServiceTest.testInvalidCombination()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.school.timetable.service.SubjectCombinationService.isValidCombination(java.util.List)" because "this.subjectCombinationService" is null
+	at com.school.timetable.service.SubjectCombinationServiceTest.testInvalidCombination(SubjectCombinationServiceTest.java:57)
+
+com.school.timetable.service.SubjectCombinationServiceTest.testPhysicsBasedCombinations()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.school.timetable.service.SubjectCombinationService.getPhysicsBasedCombinations()" because "this.subjectCombinationService" is null
+	at com.school.timetable.service.SubjectCombinationServiceTest.testPhysicsBasedCombinations(SubjectCombinationServiceTest.java:76)
+
+com.school.timetable.service.SubjectCombinationServiceTest.testHistoryBasedCombinations()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.school.timetable.service.SubjectCombinationService.getHistoryBasedCombinations()" because "this.subjectCombinationService" is null
+	at com.school.timetable.service.SubjectCombinationServiceTest.testHistoryBasedCombinations(SubjectCombinationServiceTest.java:90)
+
+com.school.timetable.service.SubjectCombinationServiceTest.testRecommendedWeeklyLessons()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.school.timetable.service.SubjectCombinationService.getRecommendedWeeklyLessons(java.util.List)" because "this.subjectCombinationService" is null
+	at com.school.timetable.service.SubjectCombinationServiceTest.testRecommendedWeeklyLessons(SubjectCombinationServiceTest.java:109)
+
+com.school.timetable.service.SubjectCombinationServiceTest.testMergeableSubjects()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.school.timetable.service.SubjectCombinationService.getMergeableSubjects()" because "this.subjectCombinationService" is null
+	at com.school.timetable.service.SubjectCombinationServiceTest.testMergeableSubjects(SubjectCombinationServiceTest.java:126)
+
+com.school.timetable.service.SubjectCombinationServiceTest.testRecommendedSecondChoices()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.school.timetable.service.SubjectCombinationService.getRecommendedSecondChoices(com.school.timetable.domain.enums.SubjectType)" because "this.subjectCombinationService" is null
+	at com.school.timetable.service.SubjectCombinationServiceTest.testRecommendedSecondChoices(SubjectCombinationServiceTest.java:142)
+
