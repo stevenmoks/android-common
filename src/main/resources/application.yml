@@ -1,0 +1,148 @@
+spring:
+  application:
+    name: school-timetable-scheduler
+  
+  # Database Configuration
+  datasource:
+    # For development - using H2 in-memory database
+    url: jdbc:h2:mem:timetable_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver
+    
+    # For production - uncomment and configure MySQL
+    # url: jdbc:mysql://localhost:3306/timetable_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    # username: root
+    # password: your_password
+    # driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: false
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# MyBatis Plus Configuration
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath*:/mapper/**/*.xml
+
+# Timefold Solver Configuration
+timefold:
+  solver:
+    termination:
+      spent-limit: 30s
+    environment-mode: REPRODUCIBLE
+  solver-manager:
+    parallel-solver-count: AUTO
+
+# Logging Configuration
+logging:
+  level:
+    com.school.timetable: DEBUG
+    ai.timefold.solver: INFO
+    org.springframework.web: INFO
+
+# Server Configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# Custom Application Configuration
+app:
+  timetable:
+    # 每天的时间段配置
+    time-slots:
+      - name: "早读"
+        start-time: "07:30"
+        end-time: "08:00"
+        type: "MORNING_READING"
+      - name: "第一节"
+        start-time: "08:00"
+        end-time: "08:45"
+        type: "REGULAR"
+      - name: "第二节"
+        start-time: "08:55"
+        end-time: "09:40"
+        type: "REGULAR"
+      - name: "课间操"
+        start-time: "09:40"
+        end-time: "10:10"
+        type: "BREAK"
+      - name: "第三节"
+        start-time: "10:10"
+        end-time: "10:55"
+        type: "REGULAR"
+      - name: "第四节"
+        start-time: "11:05"
+        end-time: "11:50"
+        type: "REGULAR"
+      - name: "午休"
+        start-time: "11:50"
+        end-time: "14:00"
+        type: "LUNCH_BREAK"
+      - name: "第五节"
+        start-time: "14:00"
+        end-time: "14:45"
+        type: "REGULAR"
+      - name: "第六节"
+        start-time: "14:55"
+        end-time: "15:40"
+        type: "REGULAR"
+      - name: "第七节"
+        start-time: "15:50"
+        end-time: "16:35"
+        type: "REGULAR"
+      - name: "第八节"
+        start-time: "16:45"
+        end-time: "17:30"
+        type: "REGULAR"
+      - name: "晚自习1"
+        start-time: "19:00"
+        end-time: "19:45"
+        type: "EVENING_STUDY"
+      - name: "晚自习2"
+        start-time: "19:55"
+        end-time: "20:40"
+        type: "EVENING_STUDY"
+      - name: "晚自习3"
+        start-time: "20:50"
+        end-time: "21:35"
+        type: "EVENING_STUDY"
+    
+    # 学科组合配置（3+2+1模式）
+    subject-combinations:
+      # 物理类组合
+      physics-based:
+        - ["物理", "化学", "生物"]     # 理科传统组合
+        - ["物理", "化学", "地理"]     # 理科+地理
+        - ["物理", "生物", "地理"]     # 物理+生地
+        - ["物理", "化学", "政治"]     # 物理+化学+政治
+        - ["物理", "生物", "政治"]     # 物理+生物+政治
+        - ["物理", "地理", "政治"]     # 物理+地理+政治
+      # 历史类组合
+      history-based:
+        - ["历史", "政治", "地理"]     # 文科传统组合
+        - ["历史", "化学", "生物"]     # 历史+理科
+        - ["历史", "化学", "地理"]     # 历史+化学+地理
+        - ["历史", "化学", "政治"]     # 历史+化学+政治
+        - ["历史", "生物", "地理"]     # 历史+生物+地理
+        - ["历史", "生物", "政治"]     # 历史+生物+政治
